@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 201808202138
+      author: mm
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: baza_danych_testowa.sql
+            relativeToChangelogFile: false
