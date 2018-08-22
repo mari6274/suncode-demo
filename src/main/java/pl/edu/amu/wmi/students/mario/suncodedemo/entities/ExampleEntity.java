@@ -1,9 +1,11 @@
 package pl.edu.amu.wmi.students.mario.suncodedemo.entities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Entity
 @Table(name = "tabela_testowa")
 public class ExampleEntity {
 

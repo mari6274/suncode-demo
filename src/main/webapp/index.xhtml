@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
 <h:head>
 </h:head>
 
 <h:body>
-	<h:form>
-		<h:outputText id="greeting" value="Hello!" />
-	</h:form>
+    <h:form>
+        <h:selectOneMenu id="columnSelector" value="#{mainPageBean.selectedColumn}">
+            <f:selectItems value="#{mainPageBean.columnNames}"/>
+        </h:selectOneMenu>
+        <h:selectOneRadio id="modeSelector" value="#{mainPageBean.selectedMode}">
+            <f:selectItems value="#{mainPageBean.queryModes}" var="mode" itemLabel="#{mode.displayName}"/>
+        </h:selectOneRadio>
+        <h:commandButton value="OK">
+            <f:ajax execute="columnSelector modeSelector" render="resultTable"
+                    listener="#{mainPageBean.updateResultRows}"/>
+        </h:commandButton>
+
+        <h:dataTable id="resultTable"
+                     value="#{mainPageBean.resultRows}" var="row">
+
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{row.id}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">kolumna1</f:facet>
+                #{row.column1}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">kolumna2</f:facet>
+                #{row.column2}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">kolumna3</f:facet>
+                #{row.column3}
+            </h:column>
+            <h:column>
+                <f:facet name="header">kolumna4</f:facet>
+                #{row.column4}
+            </h:column>
+        </h:dataTable>
+
+        <ui:repeat value="#{mainPageBean.resultRows}" var="row">
+            <br/>
+            <h:outputText value="#{row}"/>
+        </ui:repeat>
+    </h:form>
 </h:body>
 </html>
