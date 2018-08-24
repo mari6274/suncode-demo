@@ -10,3 +10,6 @@ java -jar target/suncode-demo-1.0.0.war \
 --spring.datasource.password="pass"
 ```
 You can also use another method for passing parameters (listed here: https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
+
+### Open applciation
+Use following address: `http://localhost:8080/index.xhtml`
