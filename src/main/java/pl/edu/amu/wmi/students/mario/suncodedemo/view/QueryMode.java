@@ -1,4 +1,4 @@
-package pl.edu.amu.wmi.students.mario.suncodedemo.view.managedbeans;
+package pl.edu.amu.wmi.students.mario.suncodedemo.view;
 
 public enum QueryMode {
     DUPLICATE("Wiersze zduplikowane"), UNIQUE("Wiersze unikalne");

@@ -3,6 +3,7 @@ package pl.edu.amu.wmi.students.mario.suncodedemo.view.managedbeans;
 import org.springframework.web.context.annotation.RequestScope;
 import pl.edu.amu.wmi.students.mario.suncodedemo.entities.ExampleEntity;
 import pl.edu.amu.wmi.students.mario.suncodedemo.services.ExampleService;
+import pl.edu.amu.wmi.students.mario.suncodedemo.view.QueryMode;
 
 import javax.inject.Inject;
 import javax.inject.Named;
