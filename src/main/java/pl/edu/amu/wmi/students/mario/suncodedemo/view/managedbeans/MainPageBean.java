@@ -5,6 +5,7 @@ import pl.edu.amu.wmi.students.mario.suncodedemo.entities.ExampleEntity;
 import pl.edu.amu.wmi.students.mario.suncodedemo.services.ExampleService;
 import pl.edu.amu.wmi.students.mario.suncodedemo.view.QueryMode;
 
+import javax.faces.event.ActionEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.*;
@@ -21,9 +22,11 @@ public class MainPageBean {
     private QueryMode selectedMode = QueryMode.DUPLICATE;
     private List<ExampleEntity> resultRows;
     private QueryMode[] queryModes = QueryMode.values();
+    private ExampleService exampleService;
 
     @Inject
     public MainPageBean(ExampleService exampleService) {
+        this.exampleService = exampleService;
         duplicateSuppliers.put("kolumna1", exampleService::findColumn1Duplicates);
         duplicateSuppliers.put("kolumna2", exampleService::findColumn2Duplicates);
         duplicateSuppliers.put("kolumna3", exampleService::findColumn3Duplicates);
@@ -72,5 +75,13 @@ public class MainPageBean {
 
     public QueryMode[] getQueryModes() {
         return queryModes;
+    }
+
+    public void createNew(ActionEvent actionEvent) {
+        exampleService.createNew();
+    }
+
+    public void updateLast(ActionEvent actionEvent) {
+        exampleService.updateLast();
     }
 }

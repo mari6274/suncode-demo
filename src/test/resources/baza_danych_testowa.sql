@@ -20,4 +20,23 @@ insert into tabela_testowa VALUES ('10','wartość87','wartość62','wartość11
 ALTER TABLE tabela_testowa
     ADD CONSTRAINT i1_constr PRIMARY KEY (id);
 
+CREATE TABLE revinfo
+(
+	rev bigint not null
+		constraint revinfo_pkey
+			primary key,
+	revtstmp bigint
+);
+
+CREATE TABLE application_status_history
+(
+	id bigint not null,
+	rev bigint not null
+		constraint fkejgvjsx8qmowrtgj0ghd2o6ob
+			references revinfo,
+	revtype smallint,
+	kolumna4 bigint,
+	constraint application_status_history_pkey
+		primary key (id, rev)
+);
 

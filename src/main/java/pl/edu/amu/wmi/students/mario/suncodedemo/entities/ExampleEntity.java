@@ -1,11 +1,17 @@
 package pl.edu.amu.wmi.students.mario.suncodedemo.entities;
 
+import org.hibernate.envers.AuditOverride;
+import org.hibernate.envers.AuditTable;
+import org.hibernate.envers.Audited;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@AuditTable("APPLICATION_STATUS_HISTORY")
+@AuditOverride
 @Table(name = "tabela_testowa")
 public class ExampleEntity {
 
@@ -21,6 +27,7 @@ public class ExampleEntity {
     @Column(name = "kolumna3", length = 256)
     private String column3;
 
+    @Audited
     @Column(name = "kolumna4")
     private Long column4;
 

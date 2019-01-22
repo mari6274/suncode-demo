@@ -72,7 +72,13 @@
             <version>1.4.197</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-envers -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+			<version>5.4.1.Final</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>

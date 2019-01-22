@@ -52,6 +52,9 @@
             <br/>
             <h:outputText value="#{row}"/>
         </ui:repeat>
+
+        <h:commandButton actionListener="#{mainPageBean.createNew}" value="create new"/>
+        <h:commandButton actionListener="#{mainPageBean.updateLast}" value="update last"/>
     </h:form>
 </h:body>
 </html>
